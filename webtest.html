@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Cat Page!</title>
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+		<style>
+			:root{
+				/* declared your variables here */
+				/* will be accessible to all definitions */
+				/* can also reassign variable value in specific definitions */
+			}
+			@media (max-width: 350px){
+				:root{
+					/* reassign new values to variables if width of
+					 * window becomes less than 350px */
+				}
+			}
+			h2{
+				color: pink;
+				font-family:Lobster;
+				text-transform: uppercase;
+			}
+			p{
+				font-size:25px;
+				font-family:monospace;
+			}
+			/* changes all non-specified elements to the same format */
+			body{
+				font-family:monospace;
+			}
+
+			/* changes margins of all radio and checkbox types */
+			[type="radio"]{
+				margin: 20px 0px 20px 0px;
+			}
+			[type="checkbox"]{
+				margin: 10px 0px 15px 0px;
+			}
+
+			#cat-photo-form{
+				background-color:green;
+			}
+			#shadow{
+				/* creates two shadows */
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 10px 20px rgba(0, 0, 0, 0.23);
+			}
+
+			/* classes will override body's element in CSS */
+			/* if two classes clash, then the class declared last
+			 * beats the classes above it and is the one that wins
+			 * Therefore, CSS reads from top to bottom.
+			 * The id declaration will override the class and tag styles, 
+			 * regardless of order.
+			 * Inline style will override id declaration. */
+			.penguin{
+				/* declare a variable. can be used in any part of style tag*/
+				--penguin-skin: gray;
+			}
+			.penguin-top{
+				background: var(--penguin-skin);
+			}
+			.red-text{
+				color:red;
+				font-size:20px;
+			}
+			.smaller-image{
+				width:100px;
+			}
+			.thin-red-border{
+				border-color:red;
+				border-width:5px;
+				border-style:solid;
+				/*adds rounded corners to border
+				border-radius: 10px; */
+			}
+			/*silver background class*/
+			.silver-background{
+				background-color: silver;
+			}
+			
+			.large-font{
+				font-size:40px;
+			}
+
+			p.red-text{
+				color:blue;
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+		<h2 class="red-text">CatPhotoApp</h2>
+		<main>
+			<!--hashtag links to content in page-->
+		  <p>Click here to view more <a href="#">cat photos</a>.</p>
+		  
+		  <!--picture-->
+		  <a href="#"><img class="thin-red-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+		  
+		<div>
+		  <p>Things cats love:</p>
+		  <!--unordered list-->
+		  <ul>
+		    <li>cat nip</li>
+		    <li>laser pointers</li>
+		    <li>lasagna</li>
+		  </ul>
+		  <p>Top 3 things cats hate:</p>
+		  <!-- ordered list-->
+		  <ol>
+		    <li>flea treatment</li>
+		    <li>thunder</li>
+		    <li>other cats</li>
+		  </ol>
+		</div>
+		  <!--form submission-->
+		  <form id="cat-photo-form" action="submit-cat-photo,php" method="POST">
+		  	<fieldset>
+		  		<legend>Type</legend>
+		  		<label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+			    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+			</fieldset>
+			<fieldset>
+			    <legend>Personality</legend>
+			    <label><input type="checkbox" name="personality" checked> Loving</label>
+			    <label><input type="checkbox" name="personality"> Lazy</label>
+			    <label><input type="checkbox" name="personality"> Energetic</label><br>
+			    <input type="text" placeholder="cat photo URL" required>
+			    <button type="submit">Submit</button>
+		  	</fieldset>
+		    
+		  </form>
+		</main>
+	</body>
+</html>
