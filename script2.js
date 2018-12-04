@@ -1,11 +1,7 @@
-function showAlert(){
-	alert("Hello World!");
-}
-
 function navBar(){
 	document.getElementById("navMenu").innerHTML =
  	"<div class=\"banner\">" +
-		"<nav style=\"width: max-content;\">" + 
+		"<nav style=\"width: max-content;\">" +
 		"<a href=\"home.html\">Home</a>"+
 			"<div class=\"drop\">" +
 				"<button class=\"dropbtn\">Menu</button>" +
@@ -13,6 +9,7 @@ function navBar(){
 					"<a href=\"prof.html\">About Me</a>" +
 					"<a href=\"portfolio.html\">Portfolio</a>" +
 					"<a href=\"contact.html\">Contact</a>" +
+					"<a href=\"js_fun.html\">Fun with JS</a>" +
 				"</div>" +
 			"</div>" +
 		"</nav>" +
@@ -66,33 +63,34 @@ function toggleClock(){
 	paragraph[1].style.fontSize="36px";
 }*/
 
-
-function setCanvas(){
-	/* creates canvas for interactive! */
-	/* creates drawing object for canvas */
-	var canvas = document.getElementById("canvas");
-	var ctx = canvas.getContext("2d");
-	ctx.fillStyle = "red";
+/* creates canvas for interactive! */
+/* creates drawing object for canvas */
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "white";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+canvas.addEventListener("click", function clear(){
+	ctx.fillStyle = "white";
 	ctx.fillRect(0,0,canvas.width,canvas.height);
-	canvas.addEventListener("mousemove", function myFunction(){
-		canvas.onmousemove = function(e){
-		var r = Math.floor(Math.random() * 255 + 1), 
-		    g = Math.floor(Math.random() * 255 + 1), 
-		    b = Math.floor(Math.random() * 255 + 1);
-		var color = "rgb(" + r + "," + g + "," + b + ")";
-		ctx.fillStyle = color;
-		var x = e.clientX - canvas.width;
-		var y = e.clientY - canvas.height;
-		ctx.beginPath();
-		ctx.arc(x, y, Math.floor(Math.random() * 30 + 1), 0, 2 * Math.PI);
-		ctx.stroke();
-		ctx.fill();
-		}
-
-	});
-
-}
-
-$(".parent").on("click", function(){
-	$(this).toggleClass("trash"); //click will transform or bring it back
 });
+canvas.addEventListener("mousemove", function myFunction(){
+	canvas.onmousemove = function(e){
+	var r = Math.floor(Math.random() * 255 + 1),
+	    g = Math.floor(Math.random() * 255 + 1),
+	    b = Math.floor(Math.random() * 255 + 1);
+	var color = "rgb(" + r + "," + g + "," + b + ")";
+	ctx.fillStyle = color;
+	var rect = canvas.getBoundingClientRect();
+	var x = e.clientX - rect.left;
+	var y = e.clientY - rect.top;
+	ctx.beginPath();
+	ctx.arc(x, y, Math.floor(Math.random() * 30 + 1), 0, 2 * Math.PI);
+	//ctx.stroke();
+	ctx.fill();
+	}
+
+});
+
+// $(".parent").on("click", function(){
+// 	$(this).toggleClass("trash"); //click will transform or bring it back
+// });

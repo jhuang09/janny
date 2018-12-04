@@ -152,15 +152,14 @@ div#clock{
 	display:none;
 }
 
-/*some transitioning stuff*/
 .fade-in{
-	opacity: 0.2;
+	opacity: 0.4;
 	/* can add more than one transition for any element; change semicolor to comma */
 	/* can change font-size, background-color, width, left */
 	transition: opacity 1000ms ease-in-out; /* [property] [duration] [ease] [delay]*/
 	/* transition: background-color 300ms ease-in-out 1s; */
 }
 
-.parent.trash .fade-in{
+.parent:hover .fade-in{
 	opacity: 1;
 }
