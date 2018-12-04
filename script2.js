@@ -2,7 +2,7 @@ function navBar(){
 	document.getElementById("navMenu").innerHTML =
  	"<div class=\"banner\">" +
 		"<nav style=\"width: max-content;\">" +
-		"<a href=\"home.html\">Home</a>"+
+		"<a href=\"index.html\">Home</a>"+
 			"<div class=\"drop\">" +
 				"<button class=\"dropbtn\">Menu</button>" +
 				"<div class=\"dropdown\">" +
