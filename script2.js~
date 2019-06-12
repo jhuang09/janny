@@ -1,5 +1,5 @@
 function navBar(){
-	document.getElementById("navMenu").innerHTML =
+	dcument.getElementById("navMenu").innerHTML =
  	"<div class=\"banner\">" +
 		"<nav style=\"width: max-content;\">" +
 		"<a href=\"index.html\">Home</a>"+
